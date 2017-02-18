@@ -110,7 +110,9 @@
                                             <outlet property="authorImage" destination="6N8-LP-TmC" id="bXW-RM-oHR"/>
                                             <outlet property="authorLabel" destination="5oE-Po-7jG" id="AU7-Ci-yvF"/>
                                             <outlet property="dLabel" destination="qde-gx-YOE" id="RuF-KG-AYM"/>
+                                            <outlet property="forknum" destination="NO6-Ij-mHg" id="srU-1y-pGu"/>
                                             <outlet property="nameLabel" destination="euk-pG-Wsu" id="Onx-Jr-3cX"/>
+                                            <outlet property="starnum" destination="n3u-El-38l" id="qrN-OY-ZTM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

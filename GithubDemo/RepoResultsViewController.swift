@@ -38,12 +38,14 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
     // Perform the search.
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if repos == nil{
+            print("nil")
             return 0
             
         }
        /* if searchController.isActive && searchController.searchBar.text != "" {
             return filteredbusinesses.count
         }*/
+        print("not nil")
         return repos.count
        
     }
@@ -54,7 +56,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.repo = repos[indexPath.row]
     
-        self.tableView.reloadData()
+    
         return cell
     }
 
@@ -66,7 +68,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
 
             // Print the returned repositories to the output window
-            
+            self.repos = []
             for repo in newRepos {
                 print(repo)
                 self.repos.append(repo)

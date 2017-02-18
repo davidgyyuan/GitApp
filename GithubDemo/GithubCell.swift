@@ -11,9 +11,16 @@ import UIKit
 class GithubCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var authorImage: UIImageView!
+    @IBOutlet weak var dLabel: UILabel!
     var repo: GithubRepo! {
         didSet{
             nameLabel.text = repo.name
+            authorLabel.text = repo.ownerHandle
+            let imageURL = URL(string: repo.ownerAvatarURL!)
+            authorImage.setImageWith(imageURL!)
+            dLabel.text = repo.repoDescription
         }
     }
     override func awakeFromNib() {

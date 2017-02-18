@@ -22,13 +22,15 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         tableView.delegate=self
         tableView.dataSource=self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         // Initialize the UISearchBar
-        searchBar = UISearchBar()
-        searchBar.delegate = self
+       // searchBar = UISearchBar()
+       // searchBar.delegate = self
         self.tableView.reloadData()
         // Add SearchBar to the NavigationBar
-        searchBar.sizeToFit()
-        navigationItem.titleView = searchBar
+        //searchBar.sizeToFit()
+       // navigationItem.titleView = searchBar
 
         // Perform the first search when the view controller first loads
         doSearch()
@@ -77,7 +79,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
             }
            
             //self.repos = newRepos
-            
+            self.tableView.reloadData()
          
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
